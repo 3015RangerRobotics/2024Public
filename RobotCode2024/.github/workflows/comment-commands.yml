@@ -1,0 +1,54 @@
+name: Comment Commands
+
+on:
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  format:
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/format')
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: React Rocket
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const {owner, repo} = context.issue
+          github.rest.reactions.createForIssueComment({
+            owner,
+            repo,
+            comment_id: context.payload.comment.id,
+            content: "rocket",
+          });
+
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.COMMENT_COMMAND_PAT }}
+    
+    - name: Fetch all history and metadata
+      run: |
+        git fetch --prune --unshallow
+        git checkout -b pr
+        git branch -f main origin/main
+    
+    - name: Checkout PR
+      run: |
+        gh pr checkout $NUMBER
+      env:
+        GITHUB_TOKEN: "${{ secrets.COMMENT_COMMAND_PAT }}"
+        NUMBER: ${{ github.event.issue.number }}
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Format code
+      run: ./gradlew spotlessApply
+
+    - name: Commit changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git commit -am "Apply formatting changes"
+        git push

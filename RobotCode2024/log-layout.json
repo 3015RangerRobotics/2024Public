@@ -1,0 +1,259 @@
+{
+  "hubs": [
+    {
+      "x": 150,
+      "y": 38,
+      "width": 1116,
+      "height": 674,
+      "state": {
+        "sidebar": {
+          "width": 315,
+          "expanded": [
+            "/AdvantageKit/RealOutputs/ShooterJoint",
+            "/AdvantageKit/RealOutputs/Swerve/Odom2d",
+            "/AdvantageKit/RealOutputs/Swerve/Odom2d/translation",
+            "/AdvantageKit/RealOutputs/Uptake",
+            "/AdvantageKit/RealOutputs/Shooter",
+            "/AdvantageKit",
+            "/AdvantageKit/DriverStation",
+            "/RealOutputs",
+            "/RealOutputs/Swerve"
+          ]
+        },
+        "tabs": {
+          "selected": 1,
+          "tabs": [
+            {
+              "type": 0,
+              "path": "../docs/INDEX.md"
+            },
+            {
+              "type": 6,
+              "uuid": "tu8qpk9j345z18rq13rvymqo5it7o04y",
+              "fields": [],
+              "listFields": [
+                [
+                  {
+                    "type": "Game Piece 0",
+                    "key": "/RealOutputs/ObjectDetection/Notes",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Component (Robot)",
+                    "key": "/RealOutputs/RobotComponentPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Green Ghost",
+                    "key": "/RealOutputs/Localization/AprilTag/RobotPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Vision Target",
+                    "key": "/RealOutputs/Localization/AprilTag/TagPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Game Piece 0",
+                    "key": "/RealOutputs/SimNotePose",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose3d"
+                  },
+                  {
+                    "type": "Trajectory",
+                    "key": "/RealOutputs/SimNoteTraj",
+                    "sourceTypeIndex": 6,
+                    "sourceType": "Translation3d[]"
+                  }
+                ],
+                [
+                  {
+                    "type": "Trajectory",
+                    "key": "/RealOutputs/Swerve/ActivePath",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  },
+                  {
+                    "type": "Blue Ghost",
+                    "key": "/RealOutputs/ObjectDetection/BlueRobots",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  },
+                  {
+                    "type": "Red Ghost",
+                    "key": "/RealOutputs/ObjectDetection/RedRobots",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  },
+                  {
+                    "type": "Robot",
+                    "key": "/RealOutputs/Swerve/Odom",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  }
+                ]
+              ],
+              "options": {
+                "field": "2024 Field",
+                "alliance": "blue",
+                "robot": "Cobra",
+                "unitDistance": "meters",
+                "unitRotation": "radians"
+              },
+              "configHidden": false,
+              "visualizer": {
+                "cameraIndex": -2,
+                "orbitFov": 50,
+                "cameraPosition": [
+                  -14.211541885898823,
+                  9.71510853414919,
+                  0.0749837528436925
+                ],
+                "cameraTarget": [
+                  0,
+                  0.5,
+                  0
+                ]
+              },
+              "title": "3D Field"
+            },
+            {
+              "type": 5,
+              "uuid": "sgcly6hb0614vt86742faz8q3uu1030p",
+              "fields": [],
+              "listFields": [
+                [
+                  {
+                    "type": "Robot",
+                    "key": "/RealOutputs/Swerve/Odom",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Ghost",
+                    "key": "/RealOutputs/Swerve/TargetPathPose",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Trajectory",
+                    "key": "/RealOutputs/Swerve/ActivePath",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  }
+                ]
+              ],
+              "options": {
+                "game": "2024 Field",
+                "unitDistance": "meters",
+                "unitRotation": "radians",
+                "origin": "right",
+                "size": 0.8636,
+                "allianceBumpers": "auto",
+                "allianceOrigin": "blue",
+                "orientation": "blue left, red right"
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Path Following"
+            },
+            {
+              "type": 5,
+              "uuid": "pcjx6pe9dzck66pchsvdfh2y4w0m8zcl",
+              "fields": [],
+              "listFields": [
+                [
+                  {
+                    "type": "Robot",
+                    "key": "/RealOutputs/Swerve/Odom2d",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Heatmap (Enabled)",
+                    "key": "/RealOutputs/Swerve/Odom2d",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  }
+                ]
+              ],
+              "options": {
+                "game": "2024 Field",
+                "unitDistance": "meters",
+                "unitRotation": "radians",
+                "origin": "right",
+                "size": 0.75,
+                "allianceBumpers": "auto",
+                "allianceOrigin": "blue",
+                "orientation": "blue left, red right"
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Heatmap"
+            },
+            {
+              "type": 9,
+              "uuid": "yktb5utdc21nb4829tsvikox4ch1mqic",
+              "fields": [
+                {
+                  "key": "/RealOutputs/Swerve/CurrentStates",
+                  "sourceTypeIndex": 0,
+                  "sourceType": 5
+                },
+                {
+                  "key": "/RealOutputs/Swerve/TargetStates",
+                  "sourceTypeIndex": 0,
+                  "sourceType": 5
+                },
+                {
+                  "key": "/RealOutputs/Swerve/Odom2d/rotation",
+                  "sourceTypeIndex": 1,
+                  "sourceType": "Rotation2d"
+                }
+              ],
+              "listFields": [],
+              "options": {
+                "maxSpeed": 5,
+                "rotationUnits": "radians",
+                "arrangement": "0,1,2,3",
+                "sizeLeftRight": 0.6858,
+                "sizeFrontBack": 0.6858,
+                "forwardDirection": "up"
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Swerve"
+            },
+            {
+              "type": 8,
+              "uuid": "fh29fjfymbvuaoi4e5nc4tro8vg9u59r",
+              "fields": [],
+              "listFields": [],
+              "options": {
+                "ids": [
+                  0,
+                  1,
+                  2
+                ],
+                "layouts": [
+                  "Xbox Controller (Blue)",
+                  "Xbox Controller (White)",
+                  "None"
+                ]
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Joysticks"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "satellites": [],
+  "version": "3.2.1"
+}

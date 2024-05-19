@@ -1,0 +1,47 @@
+name: Build & Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  formatting:
+    name: "Check formatting"
+    runs-on: ubuntu-22.04
+    container: wpilib/ubuntu-base:22.04
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Check Formatting
+        run: ./gradlew spotlessCheck
+
+  build:
+    name: "Build & Run Tests"
+    runs-on: ubuntu-22.04
+    container: wpilib/roborio-cross-ubuntu:2024-22.04
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Make sure code is formatted to prevent build failure
+        run: ./gradlew spotlessApply
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: build/reports/jacoco/test/jacocoTestReport.xml

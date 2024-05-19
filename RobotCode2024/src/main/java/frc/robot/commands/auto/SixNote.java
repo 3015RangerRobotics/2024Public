@@ -1,0 +1,98 @@
+package frc.robot.commands.auto;
+
+import com.pathplanner.lib.auto.AutoBuilder;
+import com.pathplanner.lib.path.PathPlannerPath;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.wpilibj2.command.Commands;
+import frc.robot.Constants;
+import frc.robot.Robot;
+import frc.robot.RobotContainer;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import org.littletonrobotics.junction.Logger;
+
+public class SixNote extends AutoCommand {
+  private final PathPlannerPath path1;
+  private final PathPlannerPath path2;
+  private final PathPlannerPath path3;
+  private final PathPlannerPath path4;
+  private final PathPlannerPath path5;
+  private final PathPlannerPath path6;
+  private final PathPlannerPath path7;
+
+  public SixNote(boolean scumbag) {
+    if (scumbag) {
+      path1 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.1");
+      path2 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.2");
+      path3 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.3");
+      path4 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.4");
+      path5 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.5");
+      path6 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.6");
+      path7 = PathPlannerPath.fromChoreoTrajectory("SixNoteScumbag.7");
+    } else {
+      path1 = PathPlannerPath.fromChoreoTrajectory("SixNote.1");
+      path2 = PathPlannerPath.fromChoreoTrajectory("SixNote.2");
+      path3 = PathPlannerPath.fromChoreoTrajectory("SixNote.3");
+      path4 = PathPlannerPath.fromChoreoTrajectory("SixNote.4");
+      path5 = PathPlannerPath.fromChoreoTrajectory("SixNote.5");
+      path6 = PathPlannerPath.fromChoreoTrajectory("SixNote.6");
+      path7 = PathPlannerPath.fromChoreoTrajectory("SixNote.7");
+    }
+
+    if (Robot.isSimulation() && !Logger.hasReplaySource()) {
+      addCommands(AutoBuildingBlocks.resetOdom(path1));
+    }
+
+    addCommands(
+        Commands.deadline(
+            Commands.sequence(
+                AutoBuildingBlocks.shootPreload(0.3),
+                AutoBuilder.followPath(path1)
+                    .deadlineWith(Commands.waitSeconds(1.0).andThen(AutoBuildingBlocks.intake())),
+                AutoBuilder.followPath(path2)
+                    .deadlineWith(
+                        AutoBuildingBlocks.intakeThenHardcodeShot(
+                            Constants.ShooterJoint.farAutoAngle)),
+                Commands.deadline(
+                    RobotContainer.uptake.shootUntilNoRing(),
+                    AutoBuildingBlocks.aimAtAngle(Constants.ShooterJoint.farAutoAngle)),
+                AutoBuilder.followPath(path3)
+                    .deadlineWith(Commands.waitSeconds(0.5).andThen(AutoBuildingBlocks.intake())),
+                AutoBuilder.followPath(path4).deadlineWith(AutoBuildingBlocks.intakeThenAim()),
+                Commands.deadline(
+                    RobotContainer.uptake.shootUntilNoRing(), RobotContainer.armAimLow()),
+                AutoBuilder.followPath(path5).deadlineWith(AutoBuildingBlocks.intakeThenAim()),
+                AutoBuildingBlocks.intakeAimAndShoot(),
+                AutoBuilder.followPath(path6).deadlineWith(AutoBuildingBlocks.intakeThenAim()),
+                AutoBuildingBlocks.intakeAimAndShoot(),
+                AutoBuilder.followPath(path7).deadlineWith(AutoBuildingBlocks.intakeThenAim()),
+                AutoBuildingBlocks.intakeAimAndShoot()),
+            RobotContainer.shooter.setTargetSurfaceVelocityCommand(
+                Constants.Shooter.shooterWheelSpeed)));
+  }
+
+  @Override
+  public List<Pose2d> getAllPathPoses() {
+    return Stream.of(
+            path1.getPathPoses(),
+            path2.getPathPoses(),
+            path3.getPathPoses(),
+            path4.getPathPoses(),
+            path5.getPathPoses(),
+            path6.getPathPoses(),
+            path7.getPathPoses())
+        .flatMap(Collection::stream)
+        .collect(Collectors.toList());
+  }
+
+  @Override
+  public Pose2d getStartingPose() {
+    return path1
+        .getTrajectory(new ChassisSpeeds(), new Rotation2d())
+        .getInitialTargetHolonomicPose();
+  }
+}

@@ -1,0 +1,100 @@
+{
+    "name": "Cobra",
+    "rotations": [{ "axis": "x", "degrees": 180 }, { "axis": "y", "degrees": 0 }, { "axis": "z", "degrees": 90 }],
+    "position": [0.0, 0.0, 0.0],
+    "cameras": [
+      {
+        "name": "Polaris 1 (FL)",
+        "rotations": [{ "axis": "x", "degrees": 0 }, { "axis": "y", "degrees": -30 }, { "axis": "z", "degrees": 20 }],
+        "position": [0.3034792, 0.3, 0.3034792],
+        "resolution": [1600, 1200],
+        "fov": 75.0
+      },
+      {
+        "name": "Polaris 2 (FR)",
+        "rotations": [{ "axis": "x", "degrees": 0 }, { "axis": "y", "degrees": -30 }, { "axis": "z", "degrees": -20 }],
+        "position": [0.3034792, -0.3034792, 0.3],
+        "resolution": [1600, 1200],
+        "fov": 75.0
+      },
+      {
+        "name": "Polaris 3 (BL)",
+        "rotations": [{ "axis": "x", "degrees": 0 }, { "axis": "y", "degrees": -30 }, { "axis": "z", "degrees": 160 }],
+        "position": [-0.3034792, 0.3, 0.3034792],
+        "resolution": [1600, 1200],
+        "fov": 75.0
+      },
+      {
+        "name": "Polaris 4 (BR)",
+        "rotations": [{ "axis": "x", "degrees": 0 }, { "axis": "y", "degrees": -30 }, { "axis": "z", "degrees": -160 }],
+        "position": [-0.3034792, -0.3, 0.3034792],
+        "resolution": [1600, 1200],
+        "fov": 75.0
+      }
+    ],
+    "components": [
+      {
+        "zeroedRotations": [
+          {
+            "axis": "x",
+            "degrees": 180.0
+          },
+          {
+            "axis": "y",
+            "degrees": 0.0
+          },
+          {
+            "axis": "z",
+            "degrees": 90.0
+          }
+        ],
+        "zeroedPosition": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "zeroedRotations": [
+          {
+            "axis": "x",
+            "degrees": 180.0
+          },
+          {
+            "axis": "y",
+            "degrees": 0.0
+          },
+          {
+            "axis": "z",
+            "degrees": 90.0
+          }
+        ],
+        "zeroedPosition": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "zeroedRotations": [
+          {
+            "axis": "x",
+            "degrees": 180.0
+          },
+          {
+            "axis": "y",
+            "degrees": 0.0
+          },
+          {
+            "axis": "z",
+            "degrees": 90.0
+          }
+        ],
+        "zeroedPosition": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ]
+}

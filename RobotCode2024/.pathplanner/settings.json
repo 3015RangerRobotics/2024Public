@@ -1,0 +1,14 @@
+{
+  "robotWidth": 0.8636,
+  "robotLength": 0.93,
+  "holonomicMode": true,
+  "pathFolders": [
+    "SixNote"
+  ],
+  "autoFolders": [],
+  "defaultMaxVel": 4.0,
+  "defaultMaxAccel": 4.0,
+  "defaultMaxAngVel": 540.0,
+  "defaultMaxAngAccel": 720.0,
+  "maxModuleSpeed": 4.5
+}

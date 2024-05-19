@@ -1,0 +1,196 @@
+{
+  "hubs": [
+    {
+      "x": 195,
+      "y": 120,
+      "width": 1103,
+      "height": 702,
+      "state": {
+        "sidebar": {
+          "width": 315,
+          "expanded": [
+            "/AdvantageKit/RealOutputs/LimelightNotes"
+          ]
+        },
+        "tabs": {
+          "selected": 1,
+          "tabs": [
+            {
+              "type": 0,
+              "path": "../docs/INDEX.md"
+            },
+            {
+              "type": 6,
+              "uuid": "tu8qpk9j345z18rq13rvymqo5it7o04y",
+              "fields": [],
+              "listFields": [
+                [
+                  {
+                    "type": "Game Piece 0",
+                    "key": "NT:/AdvantageKit/RealOutputs/ObjectDetection/Notes",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Component (Robot)",
+                    "key": "NT:/AdvantageKit/RealOutputs/RobotComponentPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Green Ghost",
+                    "key": "NT:/AdvantageKit/RealOutputs/Localization/AprilTag/RobotPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Vision Target",
+                    "key": "NT:/AdvantageKit/RealOutputs/Localization/AprilTag/TagPoses",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose3d[]"
+                  },
+                  {
+                    "type": "Game Piece 0",
+                    "key": "NT:/AdvantageKit/RealOutputs/SimNotePose",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose3d"
+                  },
+                  {
+                    "type": "Trajectory",
+                    "key": "NT:/AdvantageKit/RealOutputs/SimNoteTraj",
+                    "sourceTypeIndex": 6,
+                    "sourceType": "Translation3d[]"
+                  },
+                  {
+                    "type": "Game Piece 0",
+                    "key": "NT:/AdvantageKit/RealOutputs/LimelightNotes/EstimatedFieldPos",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose3d"
+                  }
+                ],
+                [
+                  {
+                    "type": "Trajectory",
+                    "key": "NT:/AdvantageKit/RealOutputs/Swerve/ActivePath",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  },
+                  {
+                    "type": "Robot",
+                    "key": "NT:/AdvantageKit/RealOutputs/Swerve/Odom",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Red Ghost",
+                    "key": "NT:/AdvantageKit/RealOutputs/ObjectDetection/Robots",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  }
+                ]
+              ],
+              "options": {
+                "field": "2024 Field",
+                "alliance": "blue",
+                "robot": "Cobra",
+                "unitDistance": "meters",
+                "unitRotation": "radians"
+              },
+              "configHidden": false,
+              "visualizer": {
+                "cameraIndex": -1,
+                "orbitFov": 50,
+                "cameraPosition": [
+                  -9.894476494046822,
+                  12.849234529251305,
+                  1.0051385959216563
+                ],
+                "cameraTarget": [
+                  -1.6153921539185028,
+                  -0.13149075492125273,
+                  0.9529099701965741
+                ]
+              },
+              "title": "3D Field"
+            },
+            {
+              "type": 5,
+              "uuid": "sgcly6hb0614vt86742faz8q3uu1030p",
+              "fields": [],
+              "listFields": [
+                [
+                  {
+                    "type": "Robot",
+                    "key": "NT:/AdvantageKit/RealOutputs/Swerve/Odom",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Ghost",
+                    "key": "NT:/AdvantageKit/RealOutputs/Swerve/TargetPathPose",
+                    "sourceTypeIndex": 1,
+                    "sourceType": "Pose2d"
+                  },
+                  {
+                    "type": "Trajectory",
+                    "key": "NT:/AdvantageKit/RealOutputs/Swerve/ActivePath",
+                    "sourceTypeIndex": 2,
+                    "sourceType": "Pose2d[]"
+                  }
+                ]
+              ],
+              "options": {
+                "game": "2024 Field",
+                "unitDistance": "meters",
+                "unitRotation": "radians",
+                "origin": "right",
+                "size": 0.75,
+                "allianceBumpers": "auto",
+                "allianceOrigin": "blue",
+                "orientation": "blue left, red right"
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Odometry"
+            },
+            {
+              "type": 9,
+              "uuid": "yktb5utdc21nb4829tsvikox4ch1mqic",
+              "fields": [
+                {
+                  "key": "NT:/AdvantageKit/RealOutputs/Swerve/CurrentStates",
+                  "sourceTypeIndex": 0,
+                  "sourceType": 5
+                },
+                {
+                  "key": "NT:/AdvantageKit/RealOutputs/Swerve/TargetStates",
+                  "sourceTypeIndex": 0,
+                  "sourceType": 5
+                },
+                {
+                  "key": "NT:/AdvantageKit/RealOutputs/Swerve/Odom2d/rotation",
+                  "sourceTypeIndex": 1,
+                  "sourceType": "Rotation2d"
+                }
+              ],
+              "listFields": [],
+              "options": {
+                "maxSpeed": 4.5,
+                "rotationUnits": "radians",
+                "arrangement": "0,1,2,3",
+                "sizeLeftRight": 0.65,
+                "sizeFrontBack": 0.65,
+                "forwardDirection": "up"
+              },
+              "configHidden": false,
+              "visualizer": null,
+              "title": "Swerve"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "satellites": [],
+  "version": "3.2.1"
+}
